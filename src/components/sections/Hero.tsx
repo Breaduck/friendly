@@ -28,14 +28,15 @@ export function Hero() {
   return (
     <section
       id={NAV.hero}
-      className="relative min-h-svh flex flex-col items-center justify-center overflow-hidden bg-ink"
+      className="relative min-h-svh flex flex-col items-center justify-center overflow-hidden bg-accent-deep"
     >
-      {/* Background */}
+      {/* Background image */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-35"
-        style={{ backgroundImage: "url('/images/hero-placeholder.jpg')" }}
+        className="absolute inset-0 bg-cover bg-center opacity-40"
+        style={{ backgroundImage: "url('/images/church-worship.jpg')" }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/20 via-ink/10 to-ink/70" />
+      {/* Green gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-accent-deep/60 via-accent-deep/30 to-accent-deep/80" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
@@ -55,7 +56,7 @@ export function Hero() {
 
         <motion.p
           {...anim(0.9)}
-          className="text-lg md:text-xl text-white/70 mb-12 leading-relaxed"
+          className="text-lg md:text-xl text-white/80 mb-12 leading-relaxed"
         >
           선교하고, 사람을 키우고, 지역과 함께하는 교회
         </motion.p>
@@ -66,13 +67,13 @@ export function Hero() {
         >
           <a
             href={`#${NAV.worship}`}
-            className="inline-flex items-center justify-center rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-white hover:bg-accent-deep transition-colors"
+            className="inline-flex items-center justify-center rounded-2xl bg-white px-8 py-3.5 text-sm font-semibold text-accent-deep hover:bg-cream transition-colors"
           >
             예배 시간 보기
           </a>
           <a
             href={`#${NAV.about}`}
-            className="inline-flex items-center justify-center rounded-full border-2 border-white/40 px-8 py-3.5 text-sm font-semibold text-white hover:border-white/80 transition-colors"
+            className="inline-flex items-center justify-center rounded-2xl border-2 border-white/50 px-8 py-3.5 text-sm font-semibold text-white hover:border-white hover:bg-white/10 transition-colors"
           >
             교회 소개
           </a>
@@ -84,15 +85,15 @@ export function Hero() {
         initial={shouldReduce ? false : { opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-[10px] text-white/30 tracking-widest uppercase">
+        <span className="text-[10px] text-white/40 tracking-widest uppercase">
           Scroll
         </span>
         <motion.div
           animate={shouldReduce ? {} : { y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          className="w-px h-8 bg-gradient-to-b from-white/30 to-transparent"
+          className="w-px h-8 bg-gradient-to-b from-white/40 to-transparent"
         />
       </motion.div>
     </section>

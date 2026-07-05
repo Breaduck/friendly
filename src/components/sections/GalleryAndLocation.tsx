@@ -22,10 +22,10 @@ export async function GalleryAndLocation() {
         </h2>
       </AnimatedSection>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-24">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-28">
         {items.map((item, i) => (
           <AnimatedSection key={item.image} delay={i * 0.05}>
-            <div className="relative aspect-square rounded-2xl overflow-hidden bg-sand group cursor-pointer">
+            <div className="relative aspect-square rounded-2xl overflow-hidden bg-sand group cursor-pointer shadow-sm hover:shadow-lg transition-shadow duration-300">
               <Image
                 src={item.image}
                 alt={item.title}
@@ -35,7 +35,7 @@ export async function GalleryAndLocation() {
                 loading="lazy"
               />
               {item.caption && (
-                <div className="absolute inset-0 bg-ink/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <div className="absolute inset-0 bg-accent-deep/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
                   <p className="text-white text-sm font-medium leading-tight">
                     {item.caption}
                   </p>
@@ -47,16 +47,16 @@ export async function GalleryAndLocation() {
       </div>
 
       {/* 오시는 길 */}
-      <div className="border-t border-sand pt-20">
+      <div className="border-t border-sand pt-24">
         <AnimatedSection>
           <Eyebrow>오시는 길</Eyebrow>
           <h2
             id="location-heading"
-            className="text-4xl md:text-5xl font-bold text-ink tracking-[-0.025em] mb-4"
+            className="text-4xl md:text-5xl font-bold text-ink tracking-[-0.025em] mb-5"
           >
             찾아오시는 방법
           </h2>
-          <p className="text-muted text-lg mb-12 max-w-xl">
+          <p className="text-muted text-lg mb-14 max-w-xl leading-relaxed">
             {church.nearestStation}에서 도보 {church.walkingMinutes}분 거리에
             위치하고 있습니다.
           </p>
@@ -65,27 +65,20 @@ export async function GalleryAndLocation() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           {/* 지도 placeholder */}
           <AnimatedSection>
-            <div className="rounded-3xl overflow-hidden aspect-video bg-sand relative">
-              <Image
-                src="/images/map-placeholder.jpg"
-                alt="정다운교회 위치 지도"
-                fill
-                className="object-cover"
-                unoptimized
-              />
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-sand/80">
-                <div className="text-5xl mb-3">📍</div>
-                <p className="text-charcoal font-semibold text-center px-4 mb-1">
+            <div className="rounded-2xl overflow-hidden aspect-video bg-sand relative shadow-sm">
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-cream/90">
+                <div className="text-5xl mb-4">📍</div>
+                <p className="text-ink font-semibold text-center px-4 mb-2">
                   {church.name}
                 </p>
-                <p className="text-sm text-muted text-center px-4 mb-6">
+                <p className="text-sm text-muted text-center px-4 mb-8 leading-relaxed">
                   {church.addressFull}
                 </p>
                 <a
                   href={`https://map.kakao.com/link/search/${encodeURIComponent(church.name)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-2.5 text-sm font-semibold text-white hover:bg-accent-deep transition-colors"
+                  className="inline-flex items-center gap-2 rounded-2xl bg-accent px-7 py-3 text-sm font-semibold text-white hover:bg-accent-deep transition-colors"
                 >
                   카카오맵으로 보기
                   <svg
@@ -108,25 +101,25 @@ export async function GalleryAndLocation() {
           {/* 주소 정보 */}
           <AnimatedSection delay={0.15}>
             <div className="space-y-4">
-              <div className="bg-warm-white rounded-2xl p-8 border border-sand">
+              <div className="bg-white rounded-2xl p-9 shadow-sm">
                 <h3 className="font-bold text-ink text-lg mb-3">주소</h3>
-                <p className="text-charcoal leading-relaxed">
+                <p className="text-charcoal leading-loose">
                   {church.addressFull}
                 </p>
               </div>
-              <div className="bg-warm-white rounded-2xl p-8 border border-sand">
+              <div className="bg-white rounded-2xl p-9 shadow-sm">
                 <h3 className="font-bold text-ink text-lg mb-3">대중교통</h3>
                 <div className="flex items-start gap-3">
-                  <span className="inline-flex items-center justify-center rounded bg-blue-600 text-white text-xs font-bold px-2 py-0.5 flex-shrink-0 mt-0.5">
+                  <span className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white text-xs font-bold px-2 py-1 flex-shrink-0 mt-0.5">
                     지하철
                   </span>
-                  <p className="text-sm text-charcoal leading-relaxed">
+                  <p className="text-sm text-charcoal leading-loose">
                     {church.nearestStation} 하차 후 도보{" "}
                     {church.walkingMinutes}분
                   </p>
                 </div>
               </div>
-              <div className="bg-warm-white rounded-2xl p-8 border border-sand">
+              <div className="bg-white rounded-2xl p-9 shadow-sm">
                 <h3 className="font-bold text-ink text-lg mb-3">연락처</h3>
                 <div className="space-y-2 text-sm text-charcoal">
                   <p>

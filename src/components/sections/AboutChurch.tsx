@@ -13,13 +13,13 @@ export function AboutChurch() {
         <Eyebrow>교회 소개</Eyebrow>
         <h2
           id="about-heading"
-          className="text-4xl md:text-5xl font-bold text-ink tracking-[-0.025em] mb-6"
+          className="text-4xl md:text-5xl font-bold text-ink tracking-[-0.025em] mb-8"
         >
           정다운교회를
           <br />
           소개합니다
         </h2>
-        <div className="max-w-2xl space-y-4 text-muted text-lg leading-relaxed mb-20">
+        <div className="max-w-2xl space-y-5 text-charcoal/80 text-lg leading-loose mb-24">
           <p>
             {church.name}는 {church.denomination}에 속해 있으며 1971년 9월
             서울대 앞 신림동(일명 고시촌)에서 개척 설립되어 고시 청년선교에
@@ -34,15 +34,15 @@ export function AboutChurch() {
 
       {/* 3대 핵심 비전 */}
       <AnimatedSection delay={0.1}>
-        <h3 className="text-2xl font-bold text-ink mb-8">3대 핵심 비전</h3>
+        <h3 className="text-2xl font-bold text-ink mb-10">3대 핵심 비전</h3>
       </AnimatedSection>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
         {visions.map((vision, i) => (
           <AnimatedSection key={vision.id} delay={i * 0.1}>
-            <div className="bg-warm-white rounded-2xl p-8 text-center h-full border border-sand hover:shadow-lg transition-shadow">
-              <div className="text-5xl mb-5">{vision.icon}</div>
-              <h4 className="text-xl font-bold text-ink mb-3">{vision.title}</h4>
-              <p className="text-sm text-charcoal/70 leading-relaxed">
+            <div className="bg-white rounded-2xl p-10 text-center h-full shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="text-5xl mb-6">{vision.icon}</div>
+              <h4 className="text-xl font-bold text-ink mb-4">{vision.title}</h4>
+              <p className="text-sm text-charcoal/70 leading-loose">
                 {vision.description}
               </p>
             </div>
@@ -52,9 +52,9 @@ export function AboutChurch() {
 
       {/* 연혁 */}
       <AnimatedSection delay={0.1}>
-        <h3 className="text-2xl font-bold text-ink mb-10">교회 연혁</h3>
+        <h3 className="text-2xl font-bold text-ink mb-12">교회 연혁</h3>
         <div className="relative">
-          <div className="absolute left-8 top-2 bottom-2 w-px bg-sand hidden md:block" />
+          <div className="absolute left-8 top-2 bottom-2 w-px bg-accent/20 hidden md:block" />
           <div className="space-y-6">
             {historyItems.map((item, i) => (
               <AnimatedSection key={item.year} delay={i * 0.1}>
@@ -65,11 +65,11 @@ export function AboutChurch() {
                       {item.year}
                     </span>
                   </div>
-                  <div className="bg-warm-white rounded-2xl p-6 flex-1 border border-sand">
-                    <h4 className="font-semibold text-ink mb-1">
+                  <div className="bg-white rounded-2xl p-7 flex-1 shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <h4 className="font-semibold text-ink mb-2">
                       {item.title}
                     </h4>
-                    <p className="text-sm text-charcoal/70 leading-relaxed">
+                    <p className="text-sm text-charcoal/70 leading-loose">
                       {item.description}
                     </p>
                   </div>

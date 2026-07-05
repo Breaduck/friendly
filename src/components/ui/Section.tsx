@@ -24,7 +24,7 @@ export function Section({
     <section
       id={id}
       aria-labelledby={ariaLabelledby}
-      className={cn("py-24 md:py-32 scroll-mt-20", className)}
+      className={cn("py-28 md:py-40 scroll-mt-20", className)}
     >
       {noContainer ? (
         children

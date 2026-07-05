@@ -43,7 +43,7 @@ export function Navbar() {
         className={cn(
           "fixed top-0 inset-x-0 z-40 transition-all duration-300",
           scrolled
-            ? "bg-warm-white/90 backdrop-blur-md border-b border-sand shadow-sm"
+            ? "bg-white/95 backdrop-blur-md border-b border-sand shadow-sm"
             : "bg-transparent"
         )}
       >
@@ -68,8 +68,8 @@ export function Navbar() {
                   activeSection === NAV[key]
                     ? "text-accent"
                     : scrolled
-                      ? "text-charcoal hover:text-accent"
-                      : "text-white/80 hover:text-white"
+                      ? "text-ink hover:text-accent"
+                      : "text-white/90 hover:text-white"
                 )}
               >
                 {label}

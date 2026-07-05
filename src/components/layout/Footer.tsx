@@ -7,13 +7,11 @@ const footerLinks = Object.entries(NAV_LABELS).filter(
 
 export function Footer() {
   return (
-    <footer className="bg-ink text-muted">
+    <footer className="bg-accent-deep text-white/70">
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
-            <h3 className="text-warm-white font-bold text-lg mb-4">
-              {church.name}
-            </h3>
+            <h3 className="text-white font-bold text-lg mb-4">{church.name}</h3>
             <p className="text-sm leading-relaxed">
               {church.denomination}
               <br />
@@ -22,13 +20,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-warm-white font-semibold mb-4">바로가기</h4>
+            <h4 className="text-white font-semibold mb-4">바로가기</h4>
             <nav className="flex flex-col gap-2">
               {footerLinks.map(([key, label]) => (
                 <a
                   key={key}
                   href={`#${NAV[key]}`}
-                  className="text-sm hover:text-warm-white transition-colors"
+                  className="text-sm hover:text-white transition-colors"
                 >
                   {label}
                 </a>
@@ -37,7 +35,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-warm-white font-semibold mb-4">연락처</h4>
+            <h4 className="text-white font-semibold mb-4">연락처</h4>
             <address className="not-italic text-sm leading-relaxed space-y-1">
               <p>{church.addressFull}</p>
               <p>
@@ -46,7 +44,7 @@ export function Footer() {
               <p>
                 <a
                   href={`tel:${church.phone}`}
-                  className="hover:text-warm-white transition-colors"
+                  className="hover:text-white transition-colors"
                 >
                   {church.phone}
                 </a>
@@ -54,7 +52,7 @@ export function Footer() {
               <p>
                 <a
                   href={`mailto:${church.email}`}
-                  className="hover:text-warm-white transition-colors"
+                  className="hover:text-white transition-colors"
                 >
                   {church.email}
                 </a>
@@ -63,7 +61,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-charcoal text-center text-xs">
+        <div className="mt-12 pt-8 border-t border-white/20 text-center text-xs text-white/40">
           <p>
             © {new Date().getFullYear()} {church.name}. All rights reserved.
           </p>

@@ -3,7 +3,7 @@ import type { PhilosophyItem } from "@/types/content";
 export const pastorInfo = {
   name: "이종운",
   title: "담임목사",
-  image: "/images/pastor-placeholder.jpg",
+  image: "/images/pastor.jpg",
   greeting: `정다운교회에 오신 것을 진심으로 환영합니다.
 
 "정다운교회"는 이름 그대로 정이 넘치고 따뜻한 공동체를 꿈꾸는 교회입니다. 1971년 서울대 앞 신림동에서 청년들의 선교를 위해 시작된 이 교회는, 반세기가 넘는 시간 동안 하나님의 은혜 안에서 자라왔습니다.
