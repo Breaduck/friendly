@@ -24,16 +24,16 @@ export function GalleryAndLocation() {
         <AnimatedSection className="md:col-span-3">
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
             <Image
-              src="/images/church-worship.jpg"
-              alt="정다운교회 예배"
+              src="/images/pck-5.jpg"
+              alt="정다운교회 사역"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 60vw"
               unoptimized
             />
             <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/50 to-transparent p-6">
-              <p className="text-white font-semibold text-sm">주일 예배</p>
-              <p className="text-white/70 text-xs mt-0.5">함께 드리는 예배</p>
+              <p className="text-white font-semibold text-sm">교회 사역</p>
+              <p className="text-white/70 text-xs mt-0.5">지역과 함께하는 정다운교회</p>
             </div>
           </div>
         </AnimatedSection>
@@ -44,7 +44,7 @@ export function GalleryAndLocation() {
           <AnimatedSection delay={0.06} className="flex-1">
             <div className="relative aspect-[4/3] md:aspect-auto md:h-full rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <Image
-                src="/images/pastor.jpg"
+                src="/images/pck-main.jpg"
                 alt="이종운 담임목사"
                 fill
                 className="object-cover object-top"
@@ -61,7 +61,7 @@ export function GalleryAndLocation() {
           <AnimatedSection delay={0.12} className="flex-1">
             <div className="relative aspect-[4/3] md:aspect-auto md:h-full rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <Image
-                src="/images/church-bethel.jpg"
+                src="/images/pck-4.jpg"
                 alt="벧엘노인요양원"
                 fill
                 className="object-cover"
