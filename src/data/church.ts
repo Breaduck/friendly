@@ -1,0 +1,13 @@
+export const church = {
+  name: "정다운교회",
+  nameEn: "Jeongdaun Church",
+  denomination: "대한예수교장로회(통합)",
+  addressFull: "경기도 안양시 만안구 석수동 (임시 주소)",
+  phone: "031-000-0000",
+  email: "info@jeongdaun.org",
+  nearestStation: "수도권 전철 1호선 관악역",
+  walkingMinutes: 5,
+  coordinates: { lat: 37.4204, lng: 126.9162 },
+  pastor: { name: "이종운", title: "목사" },
+  siteUrl: "https://jeongdaun.org",
+} as const;

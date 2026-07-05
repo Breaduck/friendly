@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm *)",
+      "Bash(npm *)",
+      "Bash(node *)",
+      "Bash(npx *)",
+      "Bash(next *)",
+      "Bash(git *)",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(Invoke-WebRequest *)",
+      "Bash(ls *)",
+      "Bash(ls)",
+      "Bash(Get-ChildItem *)",
+      "Bash(mkdir *)",
+      "Bash(New-Item *)",
+      "Bash(Move-Item *)",
+      "Bash(Copy-Item *)",
+      "Bash(Remove-Item *)",
+      "Bash(Set-Location *)",
+      "Bash(Push-Location *)",
+      "Bash(Pop-Location)",
+      "Bash(Get-Content *)",
+      "Bash(Set-Content *)",
+      "Bash(Out-File *)",
+      "Bash(Write-Output *)",
+      "Bash(echo *)",
+      "Bash(cat *)",
+      "Bash(touch *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Bash(rm *)",
+      "Bash(mkdir)",
+      "Bash(cd *)"
+    ]
+  }
+}
