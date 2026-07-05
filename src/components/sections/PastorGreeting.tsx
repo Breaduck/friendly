@@ -52,16 +52,16 @@ export function PastorGreeting() {
 
           {/* 목회 철학 */}
           <AnimatedSection delay={0.12}>
-            <h3 className="text-xl font-bold text-ink mb-5">목회 철학</h3>
-            <div className="space-y-4">
+            <h3 className="text-xl font-bold text-ink mb-6">목회 철학</h3>
+            <div className="space-y-5">
               {pastorInfo.philosophies.map((p, i) => (
-                <div key={i} className="flex items-start gap-4 bg-cream rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow">
-                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold mt-0.5">
+                <div key={i} className="flex items-start gap-5 bg-cream rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                  <span className="flex-shrink-0 w-10 h-10 rounded-full bg-accent flex items-center justify-center text-white text-sm font-bold">
                     {i + 1}
                   </span>
-                  <div>
-                    <p className="text-base font-semibold text-ink mb-2">{p.title}</p>
-                    <p className="text-base text-charcoal/65 leading-relaxed">{p.description}</p>
+                  <div className="flex-1 pt-1">
+                    <p className="text-lg font-semibold text-ink mb-2.5">{p.title}</p>
+                    <p className="text-base text-charcoal/70 leading-relaxed">{p.description}</p>
                   </div>
                 </div>
               ))}

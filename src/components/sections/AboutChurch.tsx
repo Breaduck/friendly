@@ -32,10 +32,10 @@ export function AboutChurch() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-20">
         {visions.map((vision, i) => (
           <AnimatedSection key={vision.id} delay={i * 0.08}>
-            <div className="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
-              <div className="text-4xl mb-5">{vision.icon}</div>
-              <h4 className="text-xl font-bold text-ink mb-3">{vision.title}</h4>
-              <p className="text-base text-charcoal/65 leading-relaxed">
+            <div className="bg-white rounded-2xl p-10 text-center shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
+              <div className="text-5xl mb-6">{vision.icon}</div>
+              <h4 className="text-xl font-bold text-ink mb-4">{vision.title}</h4>
+              <p className="text-base text-charcoal/70 leading-relaxed">
                 {vision.description}
               </p>
             </div>
@@ -48,20 +48,20 @@ export function AboutChurch() {
         <h3 className="text-xl font-bold text-ink mb-10">교회 연혁</h3>
         <div className="relative">
           {/* 타임라인 선 */}
-          <div className="absolute left-[1.875rem] top-3 bottom-3 w-px bg-sand hidden md:block" />
-          <div className="space-y-5">
+          <div className="absolute left-[1.75rem] top-8 bottom-8 w-px bg-sand hidden md:block" />
+          <div className="space-y-6">
             {historyItems.map((item, i) => (
               <AnimatedSection key={item.year} delay={i * 0.08}>
-                <div className="flex gap-6 md:gap-8 items-start">
-                  <div className="flex-shrink-0 flex flex-col items-center w-[3.75rem]">
-                    <div className="w-3.5 h-3.5 rounded-full bg-accent ring-[3px] ring-cream relative z-10 mt-1.5" />
-                    <span className="text-[10px] font-bold text-accent mt-1.5 text-center leading-snug">
-                      {item.year}
-                    </span>
+                <div className="flex gap-5 md:gap-7 items-start">
+                  <div className="flex-shrink-0 flex justify-center w-14 pt-8">
+                    <div className="w-3.5 h-3.5 rounded-full bg-accent ring-[3px] ring-cream relative z-10" />
                   </div>
-                  <div className="bg-white rounded-2xl px-7 py-6 flex-1 shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <h4 className="text-base font-semibold text-ink mb-2">{item.title}</h4>
-                    <p className="text-base text-charcoal/65 leading-relaxed">
+                  <div className="bg-white rounded-2xl px-8 py-7 flex-1 shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <p className="text-sm font-semibold text-accent tracking-wider mb-3">
+                      {item.year}
+                    </p>
+                    <h4 className="text-lg font-semibold text-ink mb-3">{item.title}</h4>
+                    <p className="text-base text-charcoal/70 leading-relaxed">
                       {item.description}
                     </p>
                   </div>

@@ -33,9 +33,9 @@ export function GalleryAndLocation() {
               sizes="(max-width: 768px) 100vw, 60vw"
               unoptimized
             />
-            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/50 to-transparent p-6">
-              <p className="text-white font-semibold text-sm">교회 사역</p>
-              <p className="text-white/70 text-xs mt-0.5">지역과 함께하는 정다운교회</p>
+            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/75 via-black/40 to-transparent p-7">
+              <p className="text-white font-semibold text-lg mb-1">교회 사역</p>
+              <p className="text-white/80 text-sm">지역과 함께하는 정다운교회</p>
             </div>
           </div>
         </AnimatedSection>
@@ -52,8 +52,8 @@ export function GalleryAndLocation() {
                 sizes="(max-width: 768px) 100vw, 40vw"
                 unoptimized
               />
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/50 to-transparent p-5">
-                <p className="text-white font-semibold text-sm">이종운 담임목사</p>
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/75 via-black/40 to-transparent p-6">
+                <p className="text-white font-semibold text-base">이종운 담임목사</p>
               </div>
             </div>
           </AnimatedSection>
@@ -68,8 +68,8 @@ export function GalleryAndLocation() {
                 sizes="(max-width: 768px) 100vw, 40vw"
                 unoptimized
               />
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/50 to-transparent p-5">
-                <p className="text-white font-semibold text-sm">벧엘노인요양원</p>
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/75 via-black/40 to-transparent p-6">
+                <p className="text-white font-semibold text-base">벧엘노인요양원</p>
               </div>
             </div>
           </AnimatedSection>
@@ -127,33 +127,35 @@ export function GalleryAndLocation() {
                   email: church.email,
                 },
               ].map(({ label, content, badge, phone, email }) => (
-                <div key={label} className="bg-white rounded-2xl px-8 py-6 shadow-sm">
-                  <h3 className="text-base font-bold text-ink mb-3">{label}</h3>
+                <div key={label} className="bg-white rounded-2xl px-8 py-7 shadow-sm">
+                  <p className="text-sm font-semibold text-accent tracking-wider uppercase mb-4">
+                    {label}
+                  </p>
                   {badge && (
                     <div className="flex items-start gap-3">
-                      <span className="inline-flex items-center rounded-lg bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 flex-shrink-0 mt-0.5">
+                      <span className="inline-flex items-center rounded-md bg-blue-600 text-white text-xs font-bold px-2.5 py-1 flex-shrink-0">
                         {badge}
                       </span>
-                      <p className="text-base text-charcoal/75 leading-relaxed">{content}</p>
+                      <p className="text-base text-charcoal/80 leading-relaxed">{content}</p>
                     </div>
                   )}
                   {!badge && content && (
-                    <p className="text-base text-charcoal/75 leading-relaxed">{content}</p>
+                    <p className="text-base text-charcoal/80 leading-relaxed">{content}</p>
                   )}
                   {phone && (
-                    <div className="space-y-1.5">
-                      <p className="text-base text-charcoal/75">
-                        전화:{" "}
-                        <a href={`tel:${phone}`} className="text-accent hover:underline">
+                    <div className="space-y-2.5">
+                      <div className="flex items-baseline gap-3">
+                        <span className="text-sm text-muted w-12 flex-shrink-0">전화</span>
+                        <a href={`tel:${phone}`} className="text-base text-accent hover:underline">
                           {phone}
                         </a>
-                      </p>
-                      <p className="text-base text-charcoal/75">
-                        이메일:{" "}
-                        <a href={`mailto:${email}`} className="text-accent hover:underline">
+                      </div>
+                      <div className="flex items-baseline gap-3">
+                        <span className="text-sm text-muted w-12 flex-shrink-0">이메일</span>
+                        <a href={`mailto:${email}`} className="text-base text-accent hover:underline break-all">
                           {email}
                         </a>
-                      </p>
+                      </div>
                     </div>
                   )}
                 </div>

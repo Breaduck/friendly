@@ -23,20 +23,20 @@ export function WorshipTimes() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {worshipServices.map((service, i) => (
           <AnimatedSection key={service.name} delay={i * 0.06}>
-            <div className="bg-white rounded-2xl p-8 h-full shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div className="bg-white rounded-2xl p-10 h-full shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col">
               {/* 예배 종류 */}
-              <p className="text-sm font-semibold text-accent tracking-widest uppercase mb-4">
+              <p className="text-sm font-semibold text-accent tracking-wider uppercase mb-6">
                 {service.name}
               </p>
               {/* 시간 */}
-              <p className="text-5xl font-bold text-ink tracking-tight mb-2">
+              <p className="text-5xl font-bold text-ink tracking-tight mb-3">
                 {service.time}
               </p>
               {/* 장소 */}
-              <p className="text-base text-muted mb-4">{service.location}</p>
+              <p className="text-base text-muted mb-6">{service.location}</p>
               {/* 설명 */}
               {service.description && (
-                <p className="text-sm text-charcoal/70 leading-relaxed">
+                <p className="text-base text-charcoal/75 leading-relaxed mt-auto pt-5 border-t border-sand/60">
                   {service.description}
                 </p>
               )}

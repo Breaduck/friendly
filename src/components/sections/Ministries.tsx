@@ -47,22 +47,22 @@ export function Ministries() {
 
               {/* 텍스트 */}
               <div
-                className={`p-10 md:p-12 flex flex-col justify-center bg-cream ${
+                className={`p-10 md:p-14 flex flex-col justify-center bg-cream ${
                   i % 2 === 1 ? "[direction:ltr]" : ""
                 }`}
               >
                 {ministry.since && (
-                  <p className="text-[11px] font-semibold text-accent tracking-widest uppercase mb-4">
+                  <p className="text-sm font-semibold text-accent tracking-wider uppercase mb-5">
                     {ministry.since}년 시작
                   </p>
                 )}
-                <h3 className="text-2xl font-bold text-ink mb-2 tracking-tight">
+                <h3 className="text-2xl font-bold text-ink mb-3 tracking-tight">
                   {ministry.name}
                 </h3>
-                <p className="text-accent font-medium mb-5 text-base">
+                <p className="text-accent font-medium mb-6 text-base">
                   {ministry.tagline}
                 </p>
-                <p className="text-charcoal/70 leading-loose text-base">
+                <p className="text-charcoal/75 leading-loose text-base">
                   {ministry.description}
                 </p>
               </div>
