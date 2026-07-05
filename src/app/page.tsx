@@ -5,6 +5,7 @@ import { WorshipTimes } from "@/components/sections/WorshipTimes";
 import { PastorGreeting } from "@/components/sections/PastorGreeting";
 import { AboutChurch } from "@/components/sections/AboutChurch";
 import { Ministries } from "@/components/sections/Ministries";
+import { SermonMedia } from "@/components/sections/SermonMedia";
 import { GalleryAndLocation } from "@/components/sections/GalleryAndLocation";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
         <PastorGreeting />
         <AboutChurch />
         <Ministries />
+        <SermonMedia />
         <GalleryAndLocation />
       </main>
       <Footer />

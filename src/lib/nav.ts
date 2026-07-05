@@ -4,6 +4,7 @@ export const NAV = {
   pastor: "pastor",
   about: "about",
   ministries: "ministries",
+  media: "media",
   gallery: "gallery",
 } as const;
 
@@ -15,5 +16,6 @@ export const NAV_LABELS: Record<NavKey, string> = {
   pastor: "목사님",
   about: "교회소개",
   ministries: "사역",
+  media: "설교영상",
   gallery: "오시는길",
 };

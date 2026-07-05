@@ -103,19 +103,32 @@ export function GalleryAndLocation() {
                 </div>
                 <p className="font-bold text-ink mb-1">{church.name}</p>
                 <p className="text-sm text-muted mb-8 leading-relaxed">{church.addressFull}</p>
-                <a
-                  href={`https://map.kakao.com/link/search/${encodeURIComponent(church.name)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-2xl bg-accent px-7 py-3 text-sm font-semibold text-white hover:bg-accent-deep transition-colors"
-                >
-                  카카오맵으로 보기
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
-                    <polyline points="15 3 21 3 21 9"/>
-                    <line x1="10" y1="14" x2="21" y2="3"/>
-                  </svg>
-                </a>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  {/* 네이버 지도 */}
+                  <a
+                    href={church.naverMapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-2xl bg-[#03C75A] hover:bg-[#02b351] px-6 py-2.5 text-sm font-semibold text-white transition-colors"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M16.273 12.845L7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727z"/>
+                    </svg>
+                    네이버지도
+                  </a>
+                  {/* 카카오맵 */}
+                  <a
+                    href={`https://map.kakao.com/link/search/${encodeURIComponent(church.name)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-2xl bg-[#FEE500] hover:bg-[#f0d800] px-6 py-2.5 text-sm font-semibold text-[#3C1E1E] transition-colors"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 3C6.477 3 2 6.813 2 11.5c0 2.967 1.73 5.572 4.33 7.153L5.2 21.63a.5.5 0 00.724.534l4.07-2.408A11.8 11.8 0 0012 20c5.523 0 10-3.813 10-8.5S17.523 3 12 3z"/>
+                    </svg>
+                    카카오맵
+                  </a>
+                </div>
               </div>
             </div>
           </AnimatedSection>

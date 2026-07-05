@@ -10,4 +10,6 @@ export const church = {
   coordinates: { lat: 37.4204, lng: 126.9162 },
   pastor: { name: "이종운", title: "목사" },
   siteUrl: "https://jeongdaun.org",
+  youtubeUrl: "https://www.youtube.com/@JungDownChurch_AnYang",
+  naverMapUrl: "https://naver.me/xG0D76wK",
 } as const;
