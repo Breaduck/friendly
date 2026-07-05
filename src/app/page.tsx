@@ -14,10 +14,10 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <WorshipTimes />
-        <PastorGreeting />
         <AboutChurch />
+        <PastorGreeting />
         <Ministries />
+        <WorshipTimes />
         <SermonMedia />
         <GalleryAndLocation />
       </main>

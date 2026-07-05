@@ -25,18 +25,18 @@ export function WorshipTimes() {
           <AnimatedSection key={service.name} delay={i * 0.06}>
             <div className="bg-white rounded-2xl p-8 h-full shadow-sm hover:shadow-md transition-shadow duration-300">
               {/* 예배 종류 */}
-              <p className="text-xs font-semibold text-accent tracking-widest uppercase mb-4">
+              <p className="text-sm font-semibold text-accent tracking-widest uppercase mb-4">
                 {service.name}
               </p>
               {/* 시간 */}
-              <p className="text-4xl font-bold text-ink tracking-tight mb-1">
+              <p className="text-5xl font-bold text-ink tracking-tight mb-2">
                 {service.time}
               </p>
               {/* 장소 */}
-              <p className="text-sm text-muted mb-4">{service.location}</p>
+              <p className="text-base text-muted mb-4">{service.location}</p>
               {/* 설명 */}
               {service.description && (
-                <p className="text-sm text-charcoal/60 leading-relaxed">
+                <p className="text-sm text-charcoal/70 leading-relaxed">
                   {service.description}
                 </p>
               )}

@@ -16,7 +16,7 @@ export function Ministries() {
         >
           지역과 함께하는 핵심 사역
         </h2>
-        <p className="text-muted leading-relaxed mb-16 max-w-lg">
+        <p className="text-lg text-muted leading-relaxed mb-16 max-w-lg">
           정다운교회는 교육·복지·문화 3대 비전을 바탕으로 지역 사회를 섬기고
           있습니다.
         </p>
@@ -59,10 +59,10 @@ export function Ministries() {
                 <h3 className="text-2xl font-bold text-ink mb-2 tracking-tight">
                   {ministry.name}
                 </h3>
-                <p className="text-accent font-medium mb-5 text-sm">
+                <p className="text-accent font-medium mb-5 text-base">
                   {ministry.tagline}
                 </p>
-                <p className="text-charcoal/70 leading-loose text-sm">
+                <p className="text-charcoal/70 leading-loose text-base">
                   {ministry.description}
                 </p>
               </div>

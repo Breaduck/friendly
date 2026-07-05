@@ -1,9 +1,9 @@
 export const NAV = {
   hero: "hero",
-  worship: "worship",
-  pastor: "pastor",
   about: "about",
+  pastor: "pastor",
   ministries: "ministries",
+  worship: "worship",
   media: "media",
   gallery: "gallery",
 } as const;
@@ -12,10 +12,10 @@ export type NavKey = keyof typeof NAV;
 
 export const NAV_LABELS: Record<NavKey, string> = {
   hero: "홈",
-  worship: "예배",
-  pastor: "목사님",
   about: "교회소개",
+  pastor: "목사님 인사말",
   ministries: "사역",
-  media: "설교영상",
+  worship: "예배",
+  media: "유튜브",
   gallery: "오시는길",
 };

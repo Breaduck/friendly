@@ -43,7 +43,7 @@ export function PastorGreeting() {
             >
               {pastorInfo.name} 목사님의 인사말
             </h2>
-            <div className="space-y-5 text-charcoal/80 leading-loose text-[1rem]">
+            <div className="space-y-5 text-charcoal/80 leading-loose text-lg">
               {pastorInfo.greeting.split("\n\n").map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
@@ -60,8 +60,8 @@ export function PastorGreeting() {
                     {i + 1}
                   </span>
                   <div>
-                    <p className="font-semibold text-ink mb-1.5">{p.title}</p>
-                    <p className="text-sm text-charcoal/65 leading-relaxed">{p.description}</p>
+                    <p className="text-base font-semibold text-ink mb-2">{p.title}</p>
+                    <p className="text-base text-charcoal/65 leading-relaxed">{p.description}</p>
                   </div>
                 </div>
               ))}

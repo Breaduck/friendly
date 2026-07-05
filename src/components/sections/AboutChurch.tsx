@@ -16,7 +16,7 @@ export function AboutChurch() {
         >
           정다운교회를 소개합니다
         </h2>
-        <p className="max-w-2xl text-charcoal/75 text-base leading-loose mb-20">
+        <p className="max-w-2xl text-charcoal/75 text-lg leading-loose mb-20">
           정다운교회는 대한예수교장로회(통합)교단에 속해 있으며 1971년 9월
           서울대 앞 신림동(일명 고시촌)에서 개척 설립되어 고시 청년선교에
           힘쓰다가 2011년 11월 안양시 석수동에 교회를 신축 이전한 후 교육,
@@ -34,8 +34,8 @@ export function AboutChurch() {
           <AnimatedSection key={vision.id} delay={i * 0.08}>
             <div className="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
               <div className="text-4xl mb-5">{vision.icon}</div>
-              <h4 className="text-lg font-bold text-ink mb-3">{vision.title}</h4>
-              <p className="text-sm text-charcoal/65 leading-relaxed">
+              <h4 className="text-xl font-bold text-ink mb-3">{vision.title}</h4>
+              <p className="text-base text-charcoal/65 leading-relaxed">
                 {vision.description}
               </p>
             </div>
@@ -60,8 +60,8 @@ export function AboutChurch() {
                     </span>
                   </div>
                   <div className="bg-white rounded-2xl px-7 py-6 flex-1 shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <h4 className="font-semibold text-ink mb-1.5">{item.title}</h4>
-                    <p className="text-sm text-charcoal/65 leading-relaxed">
+                    <h4 className="text-base font-semibold text-ink mb-2">{item.title}</h4>
+                    <p className="text-base text-charcoal/65 leading-relaxed">
                       {item.description}
                     </p>
                   </div>

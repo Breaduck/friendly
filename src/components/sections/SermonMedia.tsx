@@ -19,7 +19,7 @@ export function SermonMedia() {
             <br />
             말씀을 들으세요
           </h2>
-          <p className="text-charcoal/70 leading-loose mb-8">
+          <p className="text-lg text-charcoal/70 leading-loose mb-8">
             정다운교회 공식 유튜브 채널에서 매주 주일 예배 실황, 담임목사님
             말씀, 찬양 영상을 만나보실 수 있습니다. 하나님의 말씀을 통해
             위로를 얻고, 성도 간의 따뜻한 교제가 있는 정다운 공동체에
