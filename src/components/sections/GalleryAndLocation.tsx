@@ -44,7 +44,7 @@ export function GalleryAndLocation() {
           <AnimatedSection delay={0.06} className="flex-1">
             <div className="relative aspect-[4/3] md:aspect-auto md:h-full rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <Image
-                src="/images/pck-main.jpg"
+                src="/images/pck-4.jpg"
                 alt="이종운 담임목사"
                 fill
                 className="object-cover object-top"
