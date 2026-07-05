@@ -1,79 +1,108 @@
 import { Section } from "@/components/ui/Section";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { getGalleryItems } from "@/lib/gallery-source";
 import { church } from "@/data/church";
 import { NAV } from "@/lib/nav";
 import Image from "next/image";
 
-export async function GalleryAndLocation() {
-  const items = await getGalleryItems();
-
+export function GalleryAndLocation() {
   return (
     <Section id={NAV.gallery} className="bg-cream" aria-labelledby="gallery-heading">
-      {/* 갤러리 */}
+      {/* 대표 사진 2장 */}
       <AnimatedSection>
         <Eyebrow>갤러리</Eyebrow>
         <h2
           id="gallery-heading"
-          className="text-4xl md:text-5xl font-bold text-ink tracking-[-0.025em] mb-16"
+          className="text-3xl md:text-4xl font-bold text-ink tracking-tight mb-14"
         >
           교회 사진
         </h2>
       </AnimatedSection>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-28">
-        {items.map((item, i) => (
-          <AnimatedSection key={item.image} delay={i * 0.05}>
-            <div className="relative aspect-square rounded-2xl overflow-hidden bg-sand group cursor-pointer shadow-sm hover:shadow-lg transition-shadow duration-300">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-5 mb-28">
+        {/* 큰 사진 — 예배 */}
+        <AnimatedSection className="md:col-span-3">
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <Image
+              src="/images/church-worship.jpg"
+              alt="정다운교회 예배"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 60vw"
+              unoptimized
+            />
+            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/50 to-transparent p-6">
+              <p className="text-white font-semibold text-sm">주일 예배</p>
+              <p className="text-white/70 text-xs mt-0.5">함께 드리는 예배</p>
+            </div>
+          </div>
+        </AnimatedSection>
+
+        {/* 오른쪽 컬럼 */}
+        <div className="md:col-span-2 flex flex-col gap-5">
+          {/* 목사님 사진 */}
+          <AnimatedSection delay={0.06} className="flex-1">
+            <div className="relative aspect-[4/3] md:aspect-auto md:h-full rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <Image
-                src={item.image}
-                alt={item.title}
+                src="/images/pastor.jpg"
+                alt="이종운 담임목사"
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 40vw"
                 unoptimized
-                loading="lazy"
               />
-              {item.caption && (
-                <div className="absolute inset-0 bg-accent-deep/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
-                  <p className="text-white text-sm font-medium leading-tight">
-                    {item.caption}
-                  </p>
-                </div>
-              )}
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/50 to-transparent p-5">
+                <p className="text-white font-semibold text-sm">이종운 담임목사</p>
+              </div>
             </div>
           </AnimatedSection>
-        ))}
+
+          {/* 벧엘요양원 */}
+          <AnimatedSection delay={0.12} className="flex-1">
+            <div className="relative aspect-[4/3] md:aspect-auto md:h-full rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <Image
+                src="/images/church-bethel.jpg"
+                alt="벧엘노인요양원"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 40vw"
+                unoptimized
+              />
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/50 to-transparent p-5">
+                <p className="text-white font-semibold text-sm">벧엘노인요양원</p>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
       </div>
 
       {/* 오시는 길 */}
-      <div className="border-t border-sand pt-24">
+      <div className="border-t border-sand pt-20">
         <AnimatedSection>
           <Eyebrow>오시는 길</Eyebrow>
           <h2
             id="location-heading"
-            className="text-4xl md:text-5xl font-bold text-ink tracking-[-0.025em] mb-5"
+            className="text-3xl md:text-4xl font-bold text-ink tracking-tight mb-4"
           >
             찾아오시는 방법
           </h2>
-          <p className="text-muted text-lg mb-14 max-w-xl leading-relaxed">
-            {church.nearestStation}에서 도보 {church.walkingMinutes}분 거리에
-            위치하고 있습니다.
+          <p className="text-muted leading-relaxed mb-12 max-w-lg">
+            {church.nearestStation}에서 도보 {church.walkingMinutes}분 거리입니다.
           </p>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-          {/* 지도 placeholder */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          {/* 지도 카드 */}
           <AnimatedSection>
-            <div className="rounded-2xl overflow-hidden aspect-video bg-sand relative shadow-sm">
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-cream/90">
-                <div className="text-5xl mb-4">📍</div>
-                <p className="text-ink font-semibold text-center px-4 mb-2">
-                  {church.name}
-                </p>
-                <p className="text-sm text-muted text-center px-4 mb-8 leading-relaxed">
-                  {church.addressFull}
-                </p>
+            <div className="rounded-2xl overflow-hidden bg-white shadow-sm">
+              <div className="aspect-video flex flex-col items-center justify-center p-10 text-center">
+                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-5">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-accent">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <p className="font-bold text-ink mb-1">{church.name}</p>
+                <p className="text-sm text-muted mb-8 leading-relaxed">{church.addressFull}</p>
                 <a
                   href={`https://map.kakao.com/link/search/${encodeURIComponent(church.name)}`}
                   target="_blank"
@@ -81,67 +110,67 @@ export async function GalleryAndLocation() {
                   className="inline-flex items-center gap-2 rounded-2xl bg-accent px-7 py-3 text-sm font-semibold text-white hover:bg-accent-deep transition-colors"
                 >
                   카카오맵으로 보기
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                  >
-                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" y1="14" x2="21" y2="3" />
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                    <polyline points="15 3 21 3 21 9"/>
+                    <line x1="10" y1="14" x2="21" y2="3"/>
                   </svg>
                 </a>
               </div>
             </div>
           </AnimatedSection>
 
-          {/* 주소 정보 */}
-          <AnimatedSection delay={0.15}>
+          {/* 상세 정보 */}
+          <AnimatedSection delay={0.1}>
             <div className="space-y-4">
-              <div className="bg-white rounded-2xl p-9 shadow-sm">
-                <h3 className="font-bold text-ink text-lg mb-3">주소</h3>
-                <p className="text-charcoal leading-loose">
-                  {church.addressFull}
-                </p>
-              </div>
-              <div className="bg-white rounded-2xl p-9 shadow-sm">
-                <h3 className="font-bold text-ink text-lg mb-3">대중교통</h3>
-                <div className="flex items-start gap-3">
-                  <span className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white text-xs font-bold px-2 py-1 flex-shrink-0 mt-0.5">
-                    지하철
-                  </span>
-                  <p className="text-sm text-charcoal leading-loose">
-                    {church.nearestStation} 하차 후 도보{" "}
-                    {church.walkingMinutes}분
-                  </p>
+              {[
+                {
+                  label: "주소",
+                  content: church.addressFull,
+                },
+                {
+                  label: "대중교통",
+                  content: `${church.nearestStation} 하차 후 도보 ${church.walkingMinutes}분`,
+                  badge: "지하철",
+                },
+                {
+                  label: "연락처",
+                  content: null,
+                  phone: church.phone,
+                  email: church.email,
+                },
+              ].map(({ label, content, badge, phone, email }) => (
+                <div key={label} className="bg-white rounded-2xl px-8 py-6 shadow-sm">
+                  <h3 className="text-sm font-bold text-ink mb-3">{label}</h3>
+                  {badge && (
+                    <div className="flex items-start gap-3">
+                      <span className="inline-flex items-center rounded-lg bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 flex-shrink-0 mt-0.5">
+                        {badge}
+                      </span>
+                      <p className="text-sm text-charcoal/75 leading-relaxed">{content}</p>
+                    </div>
+                  )}
+                  {!badge && content && (
+                    <p className="text-sm text-charcoal/75 leading-relaxed">{content}</p>
+                  )}
+                  {phone && (
+                    <div className="space-y-1.5">
+                      <p className="text-sm text-charcoal/75">
+                        전화:{" "}
+                        <a href={`tel:${phone}`} className="text-accent hover:underline">
+                          {phone}
+                        </a>
+                      </p>
+                      <p className="text-sm text-charcoal/75">
+                        이메일:{" "}
+                        <a href={`mailto:${email}`} className="text-accent hover:underline">
+                          {email}
+                        </a>
+                      </p>
+                    </div>
+                  )}
                 </div>
-              </div>
-              <div className="bg-white rounded-2xl p-9 shadow-sm">
-                <h3 className="font-bold text-ink text-lg mb-3">연락처</h3>
-                <div className="space-y-2 text-sm text-charcoal">
-                  <p>
-                    전화:{" "}
-                    <a
-                      href={`tel:${church.phone}`}
-                      className="text-accent hover:underline"
-                    >
-                      {church.phone}
-                    </a>
-                  </p>
-                  <p>
-                    이메일:{" "}
-                    <a
-                      href={`mailto:${church.email}`}
-                      className="text-accent hover:underline"
-                    >
-                      {church.email}
-                    </a>
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </AnimatedSection>
         </div>

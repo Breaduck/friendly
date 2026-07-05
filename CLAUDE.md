@@ -8,3 +8,5 @@
 ## Git 원격 저장소
 
 - remote: https://github.com/Breaduck/friendly.git (origin)
+- Cloudflare Pages: https://dash.cloudflare.com/08571ac869c9f59b8298b94148b8b515/pages/view/friendly
+- GitHub push → Cloudflare Pages 자동 배포 (별도 push 불필요, git push origin master 만으로 둘 다 배포됨)
